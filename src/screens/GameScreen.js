@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   Dimensions,
   FlatList,
-  useWindowDimensions,
 } from 'react-native';
 import BackButton from '../components/BackButton';
 import { colors, spacing, radius } from '../theme';
@@ -49,27 +48,13 @@ const RANK_COLORS = ['#F0F4F8', '#A5B4FC', '#475569'];
 export default function GameScreen({ navigation, route }) {
   const { settings, partyName } = route.params || {};
   const duration = settings?.duration || 7;
-  const { height: windowHeight } = useWindowDimensions();
   const [activeTab, setActiveTab] = useState(0);
   const [currentDayPage, setCurrentDayPage] = useState(0);
-  // Start with a reasonable estimate; refined once layout fires
-  const [contentHeight, setContentHeight] = useState(windowHeight - 260);
-  const tabSwipeRef = useRef(null);
   const dayFlatListRef = useRef(null);
 
   const ranked = getRanked();
   const currentDay = MOCK_PLAYERS[0].dailyData.filter(d => d !== null).length;
   const days = Array.from({ length: duration }, (_, i) => i);
-
-  const goToTab = (index) => {
-    setActiveTab(index);
-    tabSwipeRef.current?.scrollToIndex({ index, animated: true });
-  };
-
-  const handleTabSwipe = (e) => {
-    const page = Math.round(e.nativeEvent.contentOffset.x / SCREEN_WIDTH);
-    if (page !== activeTab) setActiveTab(page);
-  };
 
   return (
     <SafeAreaView style={styles.safe}>
@@ -98,7 +83,7 @@ export default function GameScreen({ navigation, route }) {
             <TouchableOpacity
               key={tab}
               style={[styles.tab, activeTab === i && styles.tabActive]}
-              onPress={() => goToTab(i)}
+              onPress={() => setActiveTab(i)}
               activeOpacity={0.7}
             >
               <Text style={[styles.tabLabel, activeTab === i && styles.tabLabelActive]}>{tab}</Text>
@@ -107,88 +92,65 @@ export default function GameScreen({ navigation, route }) {
         </View>
       </View>
 
-      {/* Swipeable content area */}
-      <View
-        style={styles.contentArea}
-        onLayout={(e) => setContentHeight(e.nativeEvent.layout.height)}
-      >
-        <FlatList
-          ref={tabSwipeRef}
-          data={TABS}
-          horizontal
-          pagingEnabled
-          showsHorizontalScrollIndicator={false}
-          onMomentumScrollEnd={handleTabSwipe}
-          scrollEventThrottle={16}
-          keyExtractor={(_, i) => String(i)}
-          getItemLayout={(_, index) => ({
-            length: SCREEN_WIDTH,
-            offset: SCREEN_WIDTH * index,
-            index,
-          })}
-          style={styles.swiper}
-          renderItem={({ index }) => (
-            <View style={[styles.page, { height: contentHeight }]}>
-              {index === 0 ? (
-                <View style={styles.leaderboardContainer}>
-                  {ranked.map((player, i) => {
-                    const rankColor = RANK_COLORS[i] || colors.textLight;
-                    return (
-                      <View
-                        key={player.id}
-                        style={[
-                          styles.playerCard,
-                          i === 0 && styles.playerCardFirst,
-                          player.isYou && styles.playerCardYou,
-                        ]}
-                      >
-                        <View style={styles.playerRow}>
-                          <Text style={[styles.rankNum, { color: rankColor }]}>
-                            {String(i + 1).padStart(2, '0')}
+      {/* Tab content */}
+      <View style={styles.contentArea}>
+        {activeTab === 0 ? (
+          <ScrollView contentContainerStyle={styles.leaderboardContainer} showsVerticalScrollIndicator={false}>
+            {ranked.map((player, i) => {
+              const rankColor = RANK_COLORS[i] || colors.textLight;
+              return (
+                <View
+                  key={player.id}
+                  style={[
+                    styles.playerCard,
+                    i === 0 && styles.playerCardFirst,
+                    player.isYou && styles.playerCardYou,
+                  ]}
+                >
+                  <Text style={[styles.rankNum, { color: rankColor }]}>
+                    {String(i + 1).padStart(2, '0')}
+                  </Text>
+                  <View style={[styles.pfpCircle, { borderColor: rankColor }]} />
+                  <View style={styles.playerInfo}>
+                    <Text style={[styles.playerName, player.isYou && styles.playerNameYou]} numberOfLines={1} adjustsFontSizeToFit>
+                      {player.name}
+                    </Text>
+                    <View style={styles.playerCardBottom}>
+                      <Text style={[styles.playerSub, player.daysExceeded > 0 && styles.playerSubDanger]} numberOfLines={1}>
+                        {player.daysExceeded > 0 ? `${player.daysExceeded}d over limit` : 'Clean streak'}
+                      </Text>
+                      <View style={styles.statGroup}>
+                        <View style={styles.stat}>
+                          <Text style={[styles.statValue, { color: rankColor }]}>
+                            {player.avg.toFixed(1)}h
                           </Text>
-                          <View style={styles.playerInfo}>
-                            <Text style={[styles.playerName, player.isYou && styles.playerNameYou]} numberOfLines={1}>
-                              {player.name}
-                            </Text>
-                            <Text style={[styles.playerSub, player.daysExceeded > 0 && styles.playerSubDanger]}>
-                              {player.daysExceeded > 0 ? `${player.daysExceeded}d over limit` : 'Clean streak'}
-                            </Text>
-                          </View>
-                          <View style={styles.statGroup}>
-                            <View style={styles.stat}>
-                              <Text style={[styles.statValue, { color: rankColor }]}>
-                                {player.avg.toFixed(1)}h
-                              </Text>
-                              <Text style={styles.statLabel}>avg</Text>
-                            </View>
-                            <View style={styles.statDivider} />
-                            <View style={styles.stat}>
-                              <Text style={[styles.statValue, { color: rankColor }]}>
-                                {player.total.toFixed(1)}h
-                              </Text>
-                              <Text style={styles.statLabel}>total</Text>
-                            </View>
-                          </View>
+                          <Text style={styles.statLabel}>avg</Text>
+                        </View>
+                        <View style={styles.statDivider} />
+                        <View style={styles.stat}>
+                          <Text style={[styles.statValue, { color: rankColor }]}>
+                            {player.total.toFixed(1)}h
+                          </Text>
+                          <Text style={styles.statLabel}>total</Text>
                         </View>
                       </View>
-                    );
-                  })}
+                    </View>
+                  </View>
                 </View>
-              ) : (
-                <DailyHistoryTab
-                  ranked={ranked}
-                  days={days}
-                  currentDay={currentDay}
-                  limit={DAILY_LIMIT_H}
-                  currentPage={currentDayPage}
-                  onPageChange={setCurrentDayPage}
-                  flatListRef={dayFlatListRef}
-                  scrollEnabled={activeTab === 1}
-                />
-              )}
-            </View>
-          )}
-        />
+              );
+            })}
+          </ScrollView>
+        ) : (
+          <DailyHistoryTab
+            ranked={ranked}
+            days={days}
+            currentDay={currentDay}
+            limit={DAILY_LIMIT_H}
+            currentPage={currentDayPage}
+            onPageChange={setCurrentDayPage}
+            flatListRef={dayFlatListRef}
+          />
+        )}
       </View>
     </SafeAreaView>
   );
@@ -196,7 +158,7 @@ export default function GameScreen({ navigation, route }) {
 
 // ── Daily History ─────────────────────────────────────────────────────────────
 
-function DailyHistoryTab({ ranked, days, currentDay, limit, currentPage, onPageChange, flatListRef, scrollEnabled }) {
+function DailyHistoryTab({ ranked, days, currentDay, limit, currentPage, onPageChange, flatListRef }) {
   const handleScroll = (e) => {
     const page = Math.round(e.nativeEvent.contentOffset.x / SCREEN_WIDTH);
     onPageChange(page);
@@ -239,11 +201,15 @@ function DailyHistoryTab({ ranked, days, currentDay, limit, currentPage, onPageC
         data={days}
         horizontal
         pagingEnabled
-        scrollEnabled={scrollEnabled}
         showsHorizontalScrollIndicator={false}
         onScroll={handleScroll}
         scrollEventThrottle={16}
-        keyExtractor={i => String(i)}
+        keyExtractor={(_, i) => String(i)}
+        getItemLayout={(_, index) => ({
+          length: SCREEN_WIDTH,
+          offset: SCREEN_WIDTH * index,
+          index,
+        })}
         renderItem={({ item: dayIndex }) => {
           const isPast = dayIndex < currentDay;
           return (
@@ -368,56 +334,67 @@ const styles = StyleSheet.create({
   },
   tabLabelActive: { color: colors.background },
 
-  // Swiper
   contentArea: { flex: 1 },
-  swiper: { flex: 1 },
-  page: { width: SCREEN_WIDTH },
 
   // Leaderboard
   leaderboardContainer: {
-    flex: 1,
     paddingHorizontal: spacing.xl,
-    paddingBottom: spacing.md,
-    gap: spacing.xs,
+    paddingVertical: spacing.md,
+    gap: spacing.sm,
   },
   playerCard: {
-    flex: 1,
     backgroundColor: colors.surface,
-    borderRadius: radius.md,
+    borderRadius: radius.lg,
     paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.sm,
+    paddingVertical: spacing.md,
     borderWidth: 1,
     borderColor: colors.border,
-    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.md,
   },
   playerCardFirst: { backgroundColor: colors.surfaceAlt },
   playerCardYou: { borderColor: colors.primary },
-  playerRow: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
+  pfpCircle: {
+    width: 52,
+    height: 52,
+    borderRadius: 26,
+    backgroundColor: colors.surfaceAlt,
+    borderWidth: 2,
+    flexShrink: 0,
+  },
   rankNum: {
     fontFamily: 'Outfit_700Bold',
-    fontSize: 22,
-    width: 36,
+    fontSize: 20,
+    width: 30,
     letterSpacing: 0,
+    textAlign: 'center',
+    flexShrink: 0,
   },
-  playerInfo: { flex: 1, gap: 2 },
+  playerInfo: { flex: 1, gap: 6 },
+  playerCardBottom: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
   playerName: {
     fontFamily: 'Raleway_700Bold',
-    fontSize: 16,
+    fontSize: 17,
     color: colors.textDark,
   },
   playerNameYou: { color: colors.primary },
   playerSub: {
     fontFamily: 'Raleway_400Regular',
-    fontSize: 11,
+    fontSize: 12,
     color: colors.textLight,
   },
   playerSubDanger: { color: colors.danger },
   statGroup: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
-  statDivider: { width: 1, height: 24, backgroundColor: colors.border },
-  stat: { alignItems: 'center', gap: 1 },
+  statDivider: { width: 1, height: 28, backgroundColor: colors.border },
+  stat: { alignItems: 'center', gap: 2 },
   statValue: {
     fontFamily: 'Outfit_600SemiBold',
-    fontSize: 14,
+    fontSize: 15,
   },
   statLabel: {
     fontFamily: 'Raleway_400Regular',

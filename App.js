@@ -59,7 +59,7 @@ export default function App() {
         <Stack.Screen name="Instructions" component={InstructionsScreen} />
         <Stack.Screen name="CreateGame" component={CreateGameScreen} />
         <Stack.Screen name="Lobby" component={LobbyScreen} />
-        <Stack.Screen name="Game" component={GameScreen} />
+        <Stack.Screen name="Game" component={GameScreen} options={{ gestureEnabled: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

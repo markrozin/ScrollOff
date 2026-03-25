@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   codeText: {
-    fontFamily: 'Raleway_800ExtraBold',
+    fontFamily: 'Outfit_700Bold',
     fontSize: 16,
     color: colors.primary,
     letterSpacing: 3,
