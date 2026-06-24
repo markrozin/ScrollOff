@@ -1,0 +1,558 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07DD75A6C3656EDF9DECAB67 /* ScreenTimeReportExtension.appex in Embed Extensions */ = {isa = PBXBuildFile; fileRef = B7B5F6DB96674E744DB1CFDC /* ScreenTimeReportExtension.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		35912CF603AD5E3967272D40 /* DailyAppUsageReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EE8F51CD97556458947258 /* DailyAppUsageReport.swift */; };
+		43B754623F9C06FE01686E10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F8D6E217FE17C0D6C62052 /* Foundation.framework */; };
+		4B591B6B16335D8710A3EB9D /* ScreenTimeReportExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B51EDD0630BE3D7D20AB39 /* ScreenTimeReportExtension.swift */; };
+		616BB2079AE65E2B9A74563E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F8D6E217FE17C0D6C62052 /* Foundation.framework */; };
+		7C8F76E128881FA4F13A479F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C26E41DD4100F991CB43E26 /* ContentView.swift */; };
+		8DAAB493F984E5EF36AAF863 /* ScreenTimeDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387466E4B09D19B765E7B372 /* ScreenTimeDemoApp.swift */; };
+		A52521BA29AA594259631336 /* ReportContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863CEC519CADB437C4DCA09 /* ReportContext.swift */; };
+		CEFC98C2118487EA7EA6F7C7 /* DailyAppUsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB52A7533FB12C3899B15BA /* DailyAppUsageView.swift */; };
+		D1182D27DA6B20B01896D0F5 /* ReportContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9863CEC519CADB437C4DCA09 /* ReportContext.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F2DDA2126BAD9B2ED0D9D86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EB927DF25C7D42FD1006870 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF3A001B64B228A36717DE3C;
+			remoteInfo = ScreenTimeReportExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0CB9CBEF5278FDA600E847FF /* Embed Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Extensions;
+			dstSubfolderSpec = 1;
+			files = (
+				07DD75A6C3656EDF9DECAB67 /* ScreenTimeReportExtension.appex in Embed Extensions */,
+			);
+			name = "Embed Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		01C3C8D5E540B5102539BE65 /* ScreenTimeReportExtension.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = ScreenTimeReportExtension.entitlements; sourceTree = "<group>"; };
+		05C9B314D83FBF539312EF09 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BC6EA5615F3CA000608EDC3 /* generate_project.rb */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.ruby; path = generate_project.rb; sourceTree = "<group>"; };
+		35F8D6E217FE17C0D6C62052 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		387466E4B09D19B765E7B372 /* ScreenTimeDemoApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScreenTimeDemoApp.swift; sourceTree = "<group>"; };
+		7BB52A7533FB12C3899B15BA /* DailyAppUsageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DailyAppUsageView.swift; sourceTree = "<group>"; };
+		9863CEC519CADB437C4DCA09 /* ReportContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReportContext.swift; sourceTree = "<group>"; };
+		9C26E41DD4100F991CB43E26 /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A9EE8F51CD97556458947258 /* DailyAppUsageReport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DailyAppUsageReport.swift; sourceTree = "<group>"; };
+		B0B51EDD0630BE3D7D20AB39 /* ScreenTimeReportExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScreenTimeReportExtension.swift; sourceTree = "<group>"; };
+		B64143437804B50A4840EDAF /* ScreenTimeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenTimeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7B5F6DB96674E744DB1CFDC /* ScreenTimeReportExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScreenTimeReportExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F18894F8170A70F3D2A60A61 /* ScreenTimeDemo.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = ScreenTimeDemo.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31242C7AF36BECAEA214F6C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43B754623F9C06FE01686E10 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6139A67F78A20E980E75C4ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				616BB2079AE65E2B9A74563E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		34B7F4286B3D744E7DCA4543 /* ScreenTimeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				C16F972E673707D43D6CBB63 /* App */,
+				B230781E20825F62602D3128 /* Shared */,
+				458FED24A1766E687BBF34BB /* ReportExtension */,
+				AEE83D5B811A63BB2ADD5476 /* tools */,
+			);
+			name = ScreenTimeDemo;
+			path = .;
+			sourceTree = "<group>";
+		};
+		4428171D95BDE07C5D23F62C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				35F8D6E217FE17C0D6C62052 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		458FED24A1766E687BBF34BB /* ReportExtension */ = {
+			isa = PBXGroup;
+			children = (
+				B0B51EDD0630BE3D7D20AB39 /* ScreenTimeReportExtension.swift */,
+				A9EE8F51CD97556458947258 /* DailyAppUsageReport.swift */,
+				7BB52A7533FB12C3899B15BA /* DailyAppUsageView.swift */,
+				05C9B314D83FBF539312EF09 /* Info.plist */,
+				01C3C8D5E540B5102539BE65 /* ScreenTimeReportExtension.entitlements */,
+			);
+			path = ReportExtension;
+			sourceTree = "<group>";
+		};
+		9F2AEC2FF9A383195A45D565 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B64143437804B50A4840EDAF /* ScreenTimeDemo.app */,
+				B7B5F6DB96674E744DB1CFDC /* ScreenTimeReportExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEE83D5B811A63BB2ADD5476 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				1BC6EA5615F3CA000608EDC3 /* generate_project.rb */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		B230781E20825F62602D3128 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9863CEC519CADB437C4DCA09 /* ReportContext.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C16F972E673707D43D6CBB63 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				387466E4B09D19B765E7B372 /* ScreenTimeDemoApp.swift */,
+				9C26E41DD4100F991CB43E26 /* ContentView.swift */,
+				F18894F8170A70F3D2A60A61 /* ScreenTimeDemo.entitlements */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F508E89BCD05DEAC62797B9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4428171D95BDE07C5D23F62C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6529EB06E4AB7CB4BC2EE70 = {
+			isa = PBXGroup;
+			children = (
+				9F2AEC2FF9A383195A45D565 /* Products */,
+				F508E89BCD05DEAC62797B9F /* Frameworks */,
+				34B7F4286B3D744E7DCA4543 /* ScreenTimeDemo */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A2AB9EBD34F89288496A4040 /* ScreenTimeDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB99D8650C17759D91E3C0E3 /* Build configuration list for PBXNativeTarget "ScreenTimeDemo" */;
+			buildPhases = (
+				3EC4367F414B0B8743F09D74 /* Sources */,
+				6139A67F78A20E980E75C4ED /* Frameworks */,
+				1A913D2B1C29A660B399A222 /* Resources */,
+				0CB9CBEF5278FDA600E847FF /* Embed Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FBD5958910F6B5400A1F291 /* PBXTargetDependency */,
+			);
+			name = ScreenTimeDemo;
+			productName = ScreenTimeDemo;
+			productReference = B64143437804B50A4840EDAF /* ScreenTimeDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF3A001B64B228A36717DE3C /* ScreenTimeReportExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87A02ABDF6A2434A768C37F8 /* Build configuration list for PBXNativeTarget "ScreenTimeReportExtension" */;
+			buildPhases = (
+				A9F842B9F85F1A8B8D03EE50 /* Sources */,
+				31242C7AF36BECAEA214F6C3 /* Frameworks */,
+				E928D04B604252C5387E7EA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScreenTimeReportExtension;
+			productName = ScreenTimeReportExtension;
+			productReference = B7B5F6DB96674E744DB1CFDC /* ScreenTimeReportExtension.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7EB927DF25C7D42FD1006870 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A2AB9EBD34F89288496A4040 = {
+						DevelopmentTeam = YYMZB267DT;
+						ProvisioningStyle = Automatic;
+					};
+					CF3A001B64B228A36717DE3C = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3D63214C85317ECF1A4347CE /* Build configuration list for PBXProject "ScreenTimeDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F6529EB06E4AB7CB4BC2EE70;
+			productRefGroup = 9F2AEC2FF9A383195A45D565 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A2AB9EBD34F89288496A4040 /* ScreenTimeDemo */,
+				CF3A001B64B228A36717DE3C /* ScreenTimeReportExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A913D2B1C29A660B399A222 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E928D04B604252C5387E7EA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EC4367F414B0B8743F09D74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DAAB493F984E5EF36AAF863 /* ScreenTimeDemoApp.swift in Sources */,
+				7C8F76E128881FA4F13A479F /* ContentView.swift in Sources */,
+				D1182D27DA6B20B01896D0F5 /* ReportContext.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9F842B9F85F1A8B8D03EE50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B591B6B16335D8710A3EB9D /* ScreenTimeReportExtension.swift in Sources */,
+				35912CF603AD5E3967272D40 /* DailyAppUsageReport.swift in Sources */,
+				CEFC98C2118487EA7EA6F7C7 /* DailyAppUsageView.swift in Sources */,
+				A52521BA29AA594259631336 /* ReportContext.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FBD5958910F6B5400A1F291 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ScreenTimeReportExtension;
+			target = CF3A001B64B228A36717DE3C /* ScreenTimeReportExtension */;
+			targetProxy = 4F2DDA2126BAD9B2ED0D9D86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4B2516040D5DAB47190DA413 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = ReportExtension/ScreenTimeReportExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ReportExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scrolloff.ScreenTimeDemo.ScreenTimeReportExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8FD0FE31F395AF6358681B8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = ReportExtension/ScreenTimeReportExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ReportExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scrolloff.ScreenTimeDemo.ScreenTimeReportExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9458C9BBCDE95E08128CBCC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A71102DDC30ED61381F4BAF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = App/ScreenTimeDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YYMZB267DT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Screen Time Demo";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scrolloff.ScreenTimeDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D8E5545889BAD504C14DC9E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = App/ScreenTimeDemo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YYMZB267DT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Screen Time Demo";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scrolloff.ScreenTimeDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E5B294210A04C0FA81DD6088 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D63214C85317ECF1A4347CE /* Build configuration list for PBXProject "ScreenTimeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9458C9BBCDE95E08128CBCC9 /* Debug */,
+				E5B294210A04C0FA81DD6088 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87A02ABDF6A2434A768C37F8 /* Build configuration list for PBXNativeTarget "ScreenTimeReportExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B2516040D5DAB47190DA413 /* Release */,
+				8FD0FE31F395AF6358681B8E /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB99D8650C17759D91E3C0E3 /* Build configuration list for PBXNativeTarget "ScreenTimeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8E5545889BAD504C14DC9E9 /* Release */,
+				A71102DDC30ED61381F4BAF3 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7EB927DF25C7D42FD1006870 /* Project object */;
+}
